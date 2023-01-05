@@ -5,7 +5,7 @@ leftWristX = 0
 leftWristY = 0
 
 rightWristX = 0
-rightWristy = 0
+rightWristY = 0
 function preload() {
     som1 = loadSound("music.mp3");
     som2 = loadSound("music2.mp3");
