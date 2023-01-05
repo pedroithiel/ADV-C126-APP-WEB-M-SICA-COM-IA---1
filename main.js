@@ -1,6 +1,11 @@
 som1 = "";
 som2 = "";
 
+leftWristX = 0
+leftWristY = 0
+
+rightWristX = 0
+rightWristy = 0
 function preload() {
     som1 = loadSound("music.mp3");
     som2 = loadSound("music2.mp3");
