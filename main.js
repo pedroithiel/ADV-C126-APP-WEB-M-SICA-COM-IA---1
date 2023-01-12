@@ -34,6 +34,7 @@ function draw() {
     stroke("#ed1405");
     
     som1.isPlaying()
+    som2.isPlaying()
 
     if(scoreLefttWrist > 0.2){ 
         circle(leftWristX,leftWristY,10);
@@ -43,6 +44,16 @@ function draw() {
             som1.play()
             document.getElementById("nomeDaMusica").innerHTML = "harry potter";
             statusMusica1 = true
+        }
+    }
+     if(scoreRightWrist > 0.2){ 
+        circle(rightWristX,rightWristY,10);
+        som1.stop();
+
+        if(statusMusica2 == false){
+            som2.play()
+            document.getElementById("nomeDaMusica").innerHTML = "violão";
+            statusMusica2 = true
         }
     }
 
@@ -57,6 +68,7 @@ function gotPose(results) {
         leftWristX = results[0].pose.leftWrist.x;
         leftWristY = results[0].pose.leftWrist.y;
         scoreLefttWrist = results[0].pose.keypoints[9].score;
+        scoreRightWrist = results[0].pose.keypoints[10].score;
 
         rightWristX = results[0].pose.rightWrist.x;
         rightWristY = results[0].pose.rightWrist.y;
